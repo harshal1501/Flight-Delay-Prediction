@@ -1,0 +1,130 @@
+/*===== VARIABLES CSS =====*/
+
+:root {
+   /*===== Colores =====*/
+   --first-color: #1A73E8;
+   --input-color: #1F1F1F;
+   --border-color: #1A73E8;
+   --second-color: #ffffff;
+   /*===== Fuente y tipografia =====*/
+   --body-font: 'Roboto', sans-serif;
+   --normal-font-size: 1rem;
+   --small-font-size: .75rem;
+}
+
+
+/*===== BASE =====*/
+
+*,
+::before,
+::after {
+   box-sizing: border-box;
+}
+
+body {
+   margin: 0;
+   padding: 0;
+   font-family: 'Poppins', sans-serif;
+   font-size: var(--normal-font-size);
+}
+
+h1 {
+   margin: 0;
+}
+
+
+/*===== FORM =====*/
+
+.l-form {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 80vh;
+}
+
+.form {
+   width: 360px;
+   padding: 0.1rem 1rem;
+   top: 12px;
+   border-radius: 1rem;
+   box-shadow: 0 10px 25px rgba(143, 167, 187, 0.2);
+}
+
+.form__title {
+   font-weight: 400;
+   margin-bottom: 3rem;
+   color: var(--input-color);
+}
+
+.form__div {
+   position: relative;
+   height: 48px;
+   margin-bottom: 0.2rem;
+}
+
+.form__input {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   font-size: var(--normal-font-size);
+   border: 1px solid var(--border-color);
+   border-radius: .5rem;
+   outline: none;
+   padding: 1rem;
+   background: none;
+   z-index: 1;
+}
+.error{
+   font-size: 20px;
+   color: red;
+   display: "inline-block";
+   left: "280px";
+   position: "absolute";
+   top: 5px;
+}
+.form__label {
+   position: absolute;
+   left: 1rem;
+   top: 1rem;
+   padding: 0 .25rem;
+   background-color: var(--second-color);
+   color: var(--input-color);
+   font-size: var(--normal-font-size);
+   transition: .3s;
+   background: transparent;
+}
+
+
+/*Input focus move up label*/
+
+.form__input:focus+.form__label {
+   top: -1.9rem;
+   left: .8rem;
+   color: var(--first-color);
+   font-size: var(--small-font-size);
+   font-weight: 500;
+   z-index: 10;
+   background: transparent;
+}
+
+
+/*Input focus sticky top label*/
+
+.form__input:not(:placeholder-shown).form__input:not(:focus)+.form__label {
+   top: -1.5rem;
+   left: .8rem;
+   font-size: var(--small-font-size);
+   font-weight: 500;
+   z-index: 10;
+   
+}
+
+
+/*Input focus*/
+
+.form__input:focus {
+   border: 1.5px solid var(--first-color);
+   background: transparent;
+}
